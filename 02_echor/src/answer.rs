@@ -1,9 +1,9 @@
 use clap::{App, Arg};
-// use std::env::args;
+
 fn main() {
     let matches = App::new("echor")
-        .version("1.1.0")
-        .author("Ore Ore <oreore@gmail.com>")
+        .version("0.1.0")
+        .author("Ken Youens-Clark <kyclark@gmail.com>")
         .about("Rust echo")
         .arg(
             Arg::with_name("text")
@@ -22,6 +22,5 @@ fn main() {
 
     let text = matches.values_of_lossy("text").unwrap();
     let omit_newline = matches.is_present("omit_newline");
-
     print!("{}{}", text.join(" "), if omit_newline { "" } else { "\n" });
 }
